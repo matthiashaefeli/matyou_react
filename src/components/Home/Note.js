@@ -3,7 +3,9 @@ import React, { Component } from 'react'
 export default class Note extends Component {
   render() {
     return (
-      <article className='innerFlex noteLink'>GOOD TO KNOW</article>
+      <article className='innerFlex noteLink'>
+        <a href='/note' className='links'>GOOD TO KNOW</a>
+      </article>
     )
   }
 }
