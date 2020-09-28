@@ -31,36 +31,29 @@ class Index extends Component {
 
   titleText = "On my journey to learn to code I used a lot of different challenges. Here are some Ruby and Javascript challenges. Have fun!"
 
-
   render() {
     const { error, isLoaded, challenges } = this.state;
 
+    let div
     if (error) {
-      return (
-        <article className='challengeHome'>
-          <Title title={this.titleText} color={'black'} />
-          <div>Error: {error.message}</div>
-        </article>
-      )
+      div = <div>Error: {error.message}</div>
     } else if (!isLoaded) {
-      return (
-        <article className='challengeHome'>
-          <Title title={this.titleText} color={'black'} />
-          <div>Loading data .....</div>
-        </article>
-      )
+      div = <div>Loading data .....</div>
     } else {
-      return (
-        <article className='challengeHome'>
-          <Title title={this.titleText} color={'black'} />
-          <div className='challengeContainer'>
-            {challenges.map(challenge => (
-              <Detail key={challenge.id} detail={challenge} />
-            ))}
-          </div>
-        </article>
-      )
+      div = <div className='challengeContainer'>
+        {challenges.map(challenge => (
+          <Detail key={challenge.id} detail={challenge} />
+        ))}
+      </div>
     }
+
+    return (
+      <article className='challengeHome'>
+        <a href='/' className='backLink'><i class="fas fa-arrow-left"></i></a>
+        <Title title={this.titleText} color={'black'} />
+        {div}
+      </article>
+    )
   }
 }
 

@@ -33,33 +33,26 @@ class Index extends Component {
 
   render() {
     const { error, isLoaded, blogs } = this.state;
+    let div
 
     if (error) {
-      return (
-        <article className='blogHome'>
-          <Title title={this.titleText} color={'white'} />
-          <div>Error: {error.message}</div>
-        </article>
-      )
+      div = <div>Error: {error.message}</div>
     } else if (!isLoaded) {
-      return (
-        <article className='blogHome'>
-          <Title title={this.titleText} color={'white'} />
-          <div>Loading data .....</div>
-        </article>
-      )
+      div = <div>Loading data .....</div>
     } else {
-      return (
-        <article className='blogHome'>
-          <Title title={this.titleText} color={'white'} />
-          <div className='blogContainer'>
-            {blogs.map(blog => (
-              <Detail key={blog.id} detail={blog} />
-            ))}
-          </div>
-        </article>
-      )
+      div = <div className='blogContainer'>
+        {blogs.map(blog => (
+          <Detail key={blog.id} detail={blog} />
+        ))}
+      </div>
     }
+
+    return (
+      <article className='blogHome'>
+        <Title title={this.titleText} color={'white'} />
+        {div}
+      </article>
+    )
   }
 }
 
