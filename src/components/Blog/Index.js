@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { Component } from 'react';
 import './blog.scss';
 import Title from '../Title/Title';
-import Blog from './Blog';
+import Detail from '../Detail/Detail';
 
 class Index extends Component {
   state = {
@@ -54,7 +54,7 @@ class Index extends Component {
           <Title title={this.titleText} color={'white'} />
           <div className='blogContainer'>
             {blogs.map(blog => (
-              <Blog key={blog.id} blog={blog} />
+              <Detail key={blog.id} detail={blog} />
             ))}
           </div>
         </article>

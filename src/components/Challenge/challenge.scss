@@ -4,3 +4,14 @@
   background-size: contain;
   background-size: cover;
 }
+
+.challengeContainer {
+  display: flex;
+  width: 80vw;
+  height: 75vh;
+  margin: auto;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-top: 30px;
+  overflow: auto;
+}
