@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { Component } from 'react';
 import './blog.scss';
 import Title from './Title';
+import Blog from './Blog';
 
 class Index extends Component {
   state = {
@@ -48,6 +49,11 @@ class Index extends Component {
       return (
         <article className='blogHome'>
           <Title />
+          <div className='blogContainer'>
+            {blogs.map(blog => (
+              <Blog key={blog.id} blog={blog} />
+            ))}
+          </div>
         </article>
       )
     }
