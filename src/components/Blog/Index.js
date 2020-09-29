@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import './blog.scss';
 import Title from '../Title/Title';
 import Detail from '../Detail/Detail';
+import Back from '../Back/Back';
 
 class Index extends Component {
   state = {
@@ -49,6 +50,7 @@ class Index extends Component {
 
     return (
       <article className='blogHome'>
+        <Back />
         <Title title={this.titleText} color={'white'} />
         {div}
       </article>

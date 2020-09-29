@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import './challenge.scss';
 import Title from '../Title/Title';
 import Detail from '../Detail/Detail';
+import Back from '../Back/Back';
 
 class Index extends Component {
   state = {
@@ -49,7 +50,7 @@ class Index extends Component {
 
     return (
       <article className='challengeHome'>
-        <a href='/' className='backLink'><i class="fas fa-arrow-left"></i></a>
+        <Back />
         <Title title={this.titleText} color={'black'} />
         {div}
       </article>
@@ -58,3 +59,4 @@ class Index extends Component {
 }
 
 export default Index;
+
