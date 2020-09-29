@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import './challenge.scss';
 import Title from '../Title/Title';
 import Detail from '../Detail/Detail';
+import Back from '../Back/Back';
 
 class Index extends Component {
   state = {
@@ -31,37 +32,31 @@ class Index extends Component {
 
   titleText = "On my journey to learn to code I used a lot of different challenges. Here are some Ruby and Javascript challenges. Have fun!"
 
-
   render() {
     const { error, isLoaded, challenges } = this.state;
 
+    let div
     if (error) {
-      return (
-        <article className='challengeHome'>
-          <Title title={this.titleText} color={'black'} />
-          <div>Error: {error.message}</div>
-        </article>
-      )
+      div = <div>Error: {error.message}</div>
     } else if (!isLoaded) {
-      return (
-        <article className='challengeHome'>
-          <Title title={this.titleText} color={'black'} />
-          <div>Loading data .....</div>
-        </article>
-      )
+      div = <div>Loading data .....</div>
     } else {
-      return (
-        <article className='challengeHome'>
-          <Title title={this.titleText} color={'black'} />
-          <div className='challengeContainer'>
-            {challenges.map(challenge => (
-              <Detail key={challenge.id} detail={challenge} />
-            ))}
-          </div>
-        </article>
-      )
+      div = <div className='challengeContainer'>
+        {challenges.map(challenge => (
+          <Detail key={challenge.id} detail={challenge} />
+        ))}
+      </div>
     }
+
+    return (
+      <article className='challengeHome'>
+        <Back />
+        <Title title={this.titleText} color={'black'} />
+        {div}
+      </article>
+    )
   }
 }
 
 export default Index;
+
