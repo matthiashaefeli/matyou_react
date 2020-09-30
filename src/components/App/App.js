@@ -6,7 +6,7 @@ import Challenge from '../Challenge/Index';
 import About from '../About/Index';
 import Error from '../Error/Error';
 import Login from '../Login/Login';
-import Create from '../Create/Create';
+import Create from '../Create/Index';
 import { Route, Switch } from 'react-router-dom';
 import Cookie from 'js-cookie';
 

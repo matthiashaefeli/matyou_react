@@ -38,10 +38,10 @@ class Index extends Component {
           HAVE FUN!
         </div>
         <div className='aboutLinks'>
-          <a href='https://github.com/matthiashaefeli' target='_blank'>
+          <a href='https://github.com/matthiashaefeli' target='_blank' rel="noopener noreferrer" >
             <FontAwesomeIcon icon={faGithub} />
           </a>
-          <a href='https://www.linkedin.com/in/matthias-haefeli/' target='_blank'>
+          <a href='https://www.linkedin.com/in/matthias-haefeli/' target='_blank' rel="noopener noreferrer" >
             <FontAwesomeIcon icon={faLinkedin} />
           </a>
         </div>

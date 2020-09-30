@@ -1,0 +1,19 @@
+import React, { Component } from 'react';
+import Back from '../Back/Back';
+import './create.scss';
+import Title from '../Title/Title';
+import CreateForm from './CreateForm';
+
+export default class Index extends Component {
+  titleText = 'Create'
+
+  render() {
+    return (
+      <article className='createHome'>
+        <Back />
+        <Title title={this.titleText} color={'black'} />
+        <CreateForm title='Blog' url='https://matyou-api.herokuapp.com/blog' />
+      </article>
+    )
+  }
+}
