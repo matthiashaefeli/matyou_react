@@ -13,6 +13,7 @@ export default class Index extends Component {
         <Back />
         <Title title={this.titleText} color={'black'} />
         <CreateForm title='Blog' type='blog' sendUrl='https://matyou-api.herokuapp.com/blog' />
+        <CreateForm title='Challenge' type='challenge' sendUrl='https://matyou-api.herokuapp.com/challenge' />
       </article>
     )
   }
