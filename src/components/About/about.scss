@@ -1,0 +1,39 @@
+.aboutHome {
+  height: 100vh;
+  background-image: url('../../assets/images/about.jpg');
+  background-size: contain;
+  background-size: cover;
+}
+
+.aboutText {
+  width: 50%;
+  margin: auto;
+  padding-top: 30px;
+}
+
+.aboutLinks {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: auto;
+  padding-top: 50px;
+  a {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    width: 20px;
+    margin: auto;
+  }
+}
+
+.loginLink {
+  position:fixed;
+  padding: 20px;
+  top:0;
+  right:0;
+  a {
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+  }
+}
