@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Cookie from 'js-cookie';
 import './back.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlusCircle, faSignOutAlt, faHome, faSignInAlt } from '@fortawesome/free-solid-svg-icons'
+import { faPlusCircle, faSignOutAlt, faHome } from '@fortawesome/free-solid-svg-icons'
 
 export default class Back extends Component {
   state = {
