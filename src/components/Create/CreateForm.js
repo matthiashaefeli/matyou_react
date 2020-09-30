@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import axios from 'axios';
+import Cookie from 'js-cookie';
 
 class CreateForm extends Component {
   constructor(props) {
@@ -8,7 +10,9 @@ class CreateForm extends Component {
       title: '',
       url: '',
       desc: '',
-      sendUrl: this.props.url
+      sendUrl: this.props.sendUrl,
+      type: this.props.type,
+      token: Cookie.get('token'),
     }
 
     this.handleTitleChange = this.handleTitleChange.bind(this);
@@ -31,20 +35,58 @@ class CreateForm extends Component {
   }
 
   handleDescChange(e) {
+    console.log(this.state)
     this.setState({
       desc: e.target.value
     })
   }
 
   handleSubmit() {
-    console.log('')
+    const data = {
+      "title": this.state.title,
+      "url": this.state.url,
+      "description": this.state.desc
+    }
+
+    let modelData
+    if (this.state.type === 'blog') {
+      modelData = {
+        "blog": data
+      }
+    } else if (this.state.type === 'challenge') {
+      modelData = {
+        "challenge": data
+      }
+    }
+
+    const headers = {
+      'Authorization': `Bearer ${this.state.token}`,
+      'Content-Type': 'application/json'
+    }
+
+    axios.post(this.state.sendUrl, modelData, {
+      headers: headers
+    })
+      .then((response) => {
+        this.setState({
+          title: '',
+          url: '',
+          desc: ''
+        })
+        this.setState({ response: response })
+      })
+      .catch((error) => {
+        this.setState({
+          error: error
+        })
+      })
   }
 
   render() {
     const { title } = this.props
 
     return (
-      <div className='createForm'>
+      <div className='createForm' >
         <h3>{title}</h3>
         <form >
           <div>
