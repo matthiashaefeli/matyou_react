@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { Component } from 'react';
 import './note.scss';
 import Title from '../Title/Title';
-import Detail from '../Detail/Detail';
+import DetailSimple from '../Detail/DetailSimple';
 import Back from '../Back/Back';
 
 class Index extends Component {
@@ -43,7 +43,7 @@ class Index extends Component {
     } else {
       div = <div className='noteContainer'>
         {notes.map(note => (
-          <Detail key={note.id} detail={note} />
+          <DetailSimple key={note.id} detail={note} />
         ))}
       </div>
     }
