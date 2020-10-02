@@ -43,7 +43,7 @@ class Index extends Component {
     } else {
       div = <div className='blogContainer'>
         {blogs.map(blog => (
-          <Detail key={blog.id} detail={blog} />
+          <Detail key={blog.id} detail={blog} type='blog' />
         ))}
       </div>
     }

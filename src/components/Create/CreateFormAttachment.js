@@ -44,17 +44,14 @@ class CreateFormAttachment extends Component {
     axios.post("https://matyou-api.herokuapp.com/note", formData, {
       headers: headers
     })
-      .then((response) => {
+      .then(() => {
         this.setState({
           title: '',
           selectedFile: null
         })
-        this.setState({ response: response })
       })
       .catch((error) => {
-        this.setState({
-          error: error
-        })
+        console.log(error)
       })
   }
 
