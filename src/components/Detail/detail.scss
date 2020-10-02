@@ -24,3 +24,13 @@
     color: white;
   }
 }
+
+.deleteLink {
+  position: relative;
+  left: -30px;
+  top: 10px;
+  :hover {
+    cursor: pointer;
+    color: white;
+  }
+}
