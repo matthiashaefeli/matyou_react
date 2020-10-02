@@ -35,7 +35,6 @@ class CreateForm extends Component {
   }
 
   handleDescChange(e) {
-    console.log(this.state)
     this.setState({
       desc: e.target.value
     })
