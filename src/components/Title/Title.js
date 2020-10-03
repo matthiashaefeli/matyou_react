@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './title.scss';
 
-export default class Title extends Component {
+class Title extends Component {
   render() {
     const { title, color } = this.props
 
@@ -13,3 +14,9 @@ export default class Title extends Component {
   }
 }
 
+Title.propTypes = {
+  title: PropTypes.string,
+  color: PropTypes.string
+}
+
+export default Title;

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types'
 import Cookie from 'js-cookie';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
@@ -46,6 +47,10 @@ class Detail extends Component {
       </>
     )
   }
+}
+
+Detail.propTypes = {
+  type: PropTypes.string
 }
 
 export default Detail;
