@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import PropTypes from 'prop-types';
 import Cookie from 'js-cookie';
 
 class CreateForm extends Component {
@@ -122,6 +123,10 @@ class CreateForm extends Component {
       </div>
     )
   }
+}
+
+CreateForm.propTypes = {
+  title: PropTypes.string
 }
 
 export default CreateForm;
