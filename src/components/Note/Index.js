@@ -10,6 +10,7 @@ class Index extends Component {
     error: null,
     isLoaded: false,
     notes: [],
+    searchText: ''
   }
 
   componentDidMount() {
@@ -32,6 +33,12 @@ class Index extends Component {
 
   titleText = "Learning something new is a good feeling, not remembering it afterwards is not a good feeling. You know that you've seen it before and you google it over and over again. I write it down for myself and save it here. These are all my little notes."
 
+  handleSearch(e) {
+    this.setState({
+      searchText: e.target.value
+    })
+  }
+
   render() {
     const { error, isLoaded, notes } = this.state;
 
@@ -42,9 +49,11 @@ class Index extends Component {
       div = <div>Loading data .....</div>
     } else {
       div = <div className='noteContainer'>
-        {notes.map(note => (
-          <DetailSimple key={note.id} detail={note} />
-        ))}
+        {notes
+          .filter(note => note.title.toLowerCase().includes(this.state.searchText.toLowerCase()))
+          .map(note => (
+            <DetailSimple key={note.id} detail={note} />
+          ))}
       </div>
     }
 
@@ -52,6 +61,14 @@ class Index extends Component {
       <article className='noteHome'>
         <Back />
         <Title title={this.titleText} color={'black'} />
+        <div className='searchTextInput'>
+          <input
+            type='text'
+            value={this.state.searchText}
+            onChange={this.handleSearch.bind(this)}
+            placeholder='Search....'
+          />
+        </div>
         {div}
       </article>
     )

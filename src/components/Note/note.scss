@@ -8,7 +8,7 @@
 .noteContainer {
   display: flex;
   width: 80vw;
-  height: 75vh;
+  height: 65vh;
   margin: auto;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -16,8 +16,24 @@
   overflow: auto;
 }
 
+.searchTextInput {
+  width: 50%;
+  text-align: center;
+  margin: auto;
+  padding: 20px;
+  :first-child {
+    background-color: rgba(128,128,128, 0.3);
+  }
+}
+
 @media screen and (max-width: 950px) {
-  .challengeContainer {
-    height: 50vh
+  .noteContainer {
+    height: 55vh
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .noteContainer {
+    height: 40vh
   }
 }
