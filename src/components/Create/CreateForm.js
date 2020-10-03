@@ -126,7 +126,7 @@ class CreateForm extends Component {
 }
 
 CreateForm.propTypes = {
-  title: PropTypes.string
+  title: PropTypes.string.isRequired
 }
 
 export default CreateForm;
