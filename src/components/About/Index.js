@@ -30,7 +30,7 @@ class Index extends Component {
         <Back />
         <Title title={this.titleText} color={'black'} />
         <div className='aboutText'>
-          This is my notebook. I'm working as a Full Stack Ruby on Rails Developer and here is my journey.
+          This is my notebook. I'm working as a Software Engineer @ GraceHill and here is my journey.
           If I struggle with something or learn something new,I write it down here.
           My Blog is the result of a little bit more research.
           The good to know stuff is a reminder of stuff that I'm using and I do not remember how.

@@ -14,6 +14,13 @@ class Index extends Component {
   }
 
   componentDidMount() {
+    this.getData()
+    this.interval = setInterval(() => {
+      this.getData()
+    }, 6000000)
+  }
+
+  getData() {
     axios.get('https://matyou-api.herokuapp.com/note')
       .then(
         result => {
