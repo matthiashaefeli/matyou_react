@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import PropTypes from 'prop-types';
 import Cookie from 'js-cookie';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 import './detail.scss'
 
-export default class DetailSimple extends Component {
+class DetailSimple extends Component {
   handleDelete(id) {
     const headers = {
       'Authorization': `Bearer ${Cookie.get('token')}`,
@@ -43,3 +44,13 @@ export default class DetailSimple extends Component {
     )
   }
 }
+
+DetailSimple.propTypes = {
+  detail: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired
+  })
+}
+
+export default DetailSimple;

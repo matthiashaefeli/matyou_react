@@ -15,8 +15,8 @@ class Title extends Component {
 }
 
 Title.propTypes = {
-  title: PropTypes.string,
-  color: PropTypes.string
+  title: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired
 }
 
 export default Title;

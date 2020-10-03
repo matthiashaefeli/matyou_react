@@ -50,7 +50,13 @@ class Detail extends Component {
 }
 
 Detail.propTypes = {
-  type: PropTypes.string
+  detail: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired
+  }),
+  type: PropTypes.string.isRequired
 }
 
 export default Detail;
