@@ -26,7 +26,7 @@ class CreateForm extends Component {
     })
   }
 
-  handleSubmit() {
+  handleSubmit = () => {
     const data = {
       "title": this.state.title,
       "url": this.state.url,

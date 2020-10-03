@@ -9,19 +9,19 @@ class CreateFormAttachment extends Component {
     selectedFile: null
   }
 
-  onFileChange(e) {
+  onFileChange = (e) => {
     this.setState({
       selectedFile: e.target.files[0]
     })
   }
 
-  handleTitleChange(e) {
+  handleTitleChange = (e) => {
     this.setState({
       title: e.target.value
     })
   }
 
-  handleSubmit(e) {
+  handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData();
 
