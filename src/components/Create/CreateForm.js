@@ -10,42 +10,27 @@ class CreateForm extends Component {
     this.state = {
       title: '',
       url: '',
-      desc: '',
+      description: '',
       sendUrl: this.props.sendUrl,
       type: this.props.type,
       token: Cookie.get('token'),
     }
 
-    this.handleTitleChange = this.handleTitleChange.bind(this);
-    this.handleUrlChange = this.handleUrlChange.bind(this);
-    this.handleDescChange = this.handleDescChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-
-  handleTitleChange(e) {
+  handleChange = (event) => {
     this.setState({
-      title: e.target.value
+      [event.target.name]: event.target.value
     })
   }
 
-  handleUrlChange(e) {
-    this.setState({
-      url: e.target.value
-    })
-  }
-
-  handleDescChange(e) {
-    this.setState({
-      desc: e.target.value
-    })
-  }
-
-  handleSubmit() {
+  handleSubmit = () => {
     const data = {
       "title": this.state.title,
       "url": this.state.url,
-      "description": this.state.desc
+      "description": this.state.description
     }
 
     let modelData
@@ -92,26 +77,29 @@ class CreateForm extends Component {
           <div>
             <input
               type='text'
+              name='title'
               placeholder='title'
               value={this.state.title}
               autoComplete='off'
-              onChange={this.handleTitleChange} />
+              onChange={this.handleChange} />
           </div>
           <div>
             <input
               type='text'
+              name='url'
               placeholder='url'
               value={this.state.url}
               autoComplete='off'
-              onChange={this.handleUrlChange} />
+              onChange={this.handleChange} />
           </div>
           <div>
             <input
               type='text'
+              name='description'
               placeholder='desc'
               value={this.state.desc}
               autoComplete='off'
-              onChange={this.handleDescChange} />
+              onChange={this.handleChange} />
           </div>
           <div>
             <input
