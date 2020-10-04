@@ -10,19 +10,13 @@ class Login extends Component {
     password: ''
   }
 
-  handleUserNameChange(e) {
+  handleChange = (event) => {
     this.setState({
-      userName: e.target.value
+      [event.target.name]: event.target.value
     })
   }
 
-  handlePasswordChange(e) {
-    this.setState({
-      password: e.target.value
-    })
-  }
-
-  handleSubmit(e) {
+  handleSubmit = (e) => {
     e.preventDefault();
     axios.post('https://matyou-api.herokuapp.com/signin', {
       "email": this.state.userName,
@@ -52,7 +46,7 @@ class Login extends Component {
                 placeholder='username'
                 value={this.state.userName}
                 autoComplete='off'
-                onChange={this.handleUserNameChange.bind(this)} />
+                onChange={this.handleChange.bind(this)} />
             </div>
             <div>
               <input
@@ -60,7 +54,7 @@ class Login extends Component {
                 placeholder='password'
                 value={this.state.password}
                 autoComplete='off'
-                onChange={this.handlePasswordChange.bind(this)} />
+                onChange={this.handleChange.bind(this)} />
             </div>
             <div>
               <input
