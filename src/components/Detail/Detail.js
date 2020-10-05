@@ -9,7 +9,7 @@ import './detail.scss';
 
 class Detail extends Component {
 
-  handleDelete(id, type) {
+  handleDelete = (id, type) => {
     const headers = {
       'Authorization': `Bearer ${Cookie.get('token')}`,
       'Content-Type': 'application/json'

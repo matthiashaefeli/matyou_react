@@ -9,7 +9,7 @@ export default class Back extends Component {
     authorized: Cookie.get('authorized')
   }
 
-  signOut(e) {
+  signOut = (e) => {
     e.preventDefault();
     Cookie.remove('authorized');
     Cookie.remove('token');

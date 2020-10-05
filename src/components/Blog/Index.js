@@ -12,7 +12,7 @@ class Index extends Component {
     blogs: [],
   }
 
-  componentDidMount() {
+  componentDidMount = () => {
     axios.get('https://matyou-api.herokuapp.com/blog')
       .then(
         result => {

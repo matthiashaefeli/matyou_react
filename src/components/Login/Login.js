@@ -46,6 +46,7 @@ class Login extends Component {
                 placeholder='username'
                 value={this.state.userName}
                 autoComplete='off'
+                name='userName'
                 onChange={this.handleChange.bind(this)} />
             </div>
             <div>
@@ -54,6 +55,7 @@ class Login extends Component {
                 placeholder='password'
                 value={this.state.password}
                 autoComplete='off'
+                name='password'
                 onChange={this.handleChange.bind(this)} />
             </div>
             <div>
