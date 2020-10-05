@@ -7,7 +7,7 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons'
 import './detail.scss'
 
 class DetailSimple extends Component {
-  handleDelete(id) {
+  handleDelete = (id) => {
     const headers = {
       'Authorization': `Bearer ${Cookie.get('token')}`,
       'Content-Type': 'application/json'

@@ -11,10 +11,6 @@ import { Route, Switch } from 'react-router-dom';
 import Cookie from 'js-cookie';
 
 class App extends Component {
-  state = {
-
-  }
-
   render() {
     let route
     if (Cookie.get('token')) {

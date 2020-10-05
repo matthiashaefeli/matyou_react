@@ -52,13 +52,12 @@ class CreateForm extends Component {
     axios.post(this.state.sendUrl, modelData, {
       headers: headers
     })
-      .then((response) => {
+      .then(() => {
         this.setState({
           title: '',
           url: '',
           desc: ''
         })
-        this.setState({ response: response })
       })
       .catch((error) => {
         this.setState({

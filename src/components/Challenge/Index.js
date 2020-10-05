@@ -12,7 +12,7 @@ class Index extends Component {
     challenges: [],
   }
 
-  componentDidMount() {
+  componentDidMount = () => {
     axios.get('https://matyou-api.herokuapp.com/challenge')
       .then(
         result => {
