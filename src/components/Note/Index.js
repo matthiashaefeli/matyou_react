@@ -4,6 +4,7 @@ import './note.scss';
 import Title from '../Title/Title';
 import DetailSimple from '../Detail/DetailSimple';
 import Back from '../Back/Back';
+import Loading from '../Loading/Loading';
 
 class Index extends Component {
   state = {
@@ -46,7 +47,7 @@ class Index extends Component {
     if (error) {
       div = <div>Error: {error.message}</div>
     } else if (!isLoaded) {
-      div = <div>Loading data .....</div>
+      div = <Loading />
     } else {
       div = <div className='noteContainer'>
         {notes
