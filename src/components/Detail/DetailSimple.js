@@ -29,7 +29,7 @@ class DetailSimple extends Component {
 
     let deleteLink
     if (Cookie.get('token')) {
-      deleteLink = <FontAwesomeIcon icon={faTrash} className='deleteLink' onClick={this.handleDelete.bind(this, id)} />
+      deleteLink = <FontAwesomeIcon icon={faTrash} className='deleteLinkSimple' onClick={this.handleDelete.bind(this, id)} />
     } else {
       deleteLink = null
     }

@@ -33,8 +33,18 @@
 
 .deleteLink {
   position: relative;
-  left: 600px;
-  top: -30px;
+  left: -1.5em;
+  top: 10px;
+  :hover {
+    cursor: pointer;
+    color: white;
+  }
+}
+
+.deleteLinkSimple {
+  position: relative;
+  left: 30em;
+  top: -2em;
   :hover {
     cursor: pointer;
     color: white;
