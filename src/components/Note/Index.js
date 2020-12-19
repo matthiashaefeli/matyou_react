@@ -69,7 +69,7 @@ class Index extends Component {
             onChange={this.handleSearch.bind(this)}
             placeholder='Search....'
           />
-          <p>{this.state.notes.length} Total Notes</p>
+          <p>{this.state.notes.length} Notes</p>
         </div>
         {div}
       </article>

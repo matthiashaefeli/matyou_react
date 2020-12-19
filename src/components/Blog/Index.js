@@ -53,6 +53,7 @@ class Index extends Component {
       <article className='blogHome'>
         <Back />
         <Title title={this.titleText} color={'white'} />
+        <p className='blogLength'>{this.state.blogs.length} Blogs</p>
         {div}
       </article>
     )
