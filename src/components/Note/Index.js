@@ -5,6 +5,7 @@ import Title from '../Title/Title';
 import DetailSimple from '../Detail/DetailSimple';
 import Back from '../Back/Back';
 import Loading from '../Loading/Loading';
+import NetworkError from '../../Network/Index';
 
 class Index extends Component {
   state = {
@@ -45,17 +46,17 @@ class Index extends Component {
 
     let div
     if (error) {
-      div = <div>Error: {error.message}</div>
+      div = <NetworkError />
     } else if (!isLoaded) {
       div = <Loading />
     } else {
       div = <div className='noteContainer'>
-        {notes
-          .filter(note => note.title.toLowerCase().includes(this.state.searchText.toLowerCase()))
-          .map(note => (
-            <DetailSimple key={note.id} detail={note} />
-          ))}
-      </div>
+              {notes
+                .filter(note => note.title.toLowerCase().includes(this.state.searchText.toLowerCase()))
+                .map(note => (
+                  <DetailSimple key={note.id} detail={note} />
+                ))}
+            </div>
     }
 
     return (
