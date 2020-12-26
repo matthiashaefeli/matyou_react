@@ -5,6 +5,7 @@ import Title from '../Title/Title';
 import Detail from '../Detail/Detail';
 import Back from '../Back/Back';
 import Loading from '../Loading/Loading';
+import NetworkError from '../../Network/Index';
 
 class Index extends Component {
   state = {
@@ -38,15 +39,15 @@ class Index extends Component {
 
     let div
     if (error) {
-      div = <div>Error: {error.message}</div>
+      div = <NetworkError />
     } else if (!isLoaded) {
       div = <Loading />
     } else {
       div = <div className='challengeContainer'>
-        {challenges.map(challenge => (
-          <Detail key={challenge.id} detail={challenge} type='challenge' />
-        ))}
-      </div>
+              {challenges.map(challenge => (
+                <Detail key={challenge.id} detail={challenge} type='challenge' />
+              ))}
+            </div>
     }
 
     return (
