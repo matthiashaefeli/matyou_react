@@ -4,6 +4,7 @@ import Blog from '../Blog/Index';
 import Note from '../Note/Index';
 import Challenge from '../Challenge/Index';
 import About from '../About/Index';
+import Book from '../Book/Index';
 import Error from '../Error/Error';
 import Login from '../Login/Login';
 import Create from '../Create/Index';
@@ -27,6 +28,7 @@ class App extends Component {
         <Route exact path='/challenge' component={Challenge} />
         <Route exact path='/about' component={About} />
         <Route exact path='/login' component={Login} />
+        <Route exact path='/book' component={Book} />
         {route}
         <Route component={Error} />
       </Switch>

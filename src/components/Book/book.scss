@@ -1,0 +1,30 @@
+.bookHome {
+  height: 100vh;
+  background-image: url('../../assets/images/book.jpg');
+  background-size: contain;
+  background-size: cover;
+}
+
+.bookContainer {
+  display: flex;
+  width: 80vw;
+  height: 75vh;
+  margin: auto;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-top: 30px;
+  overflow: auto;
+}
+
+.bookLength {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 950px) {
+  .bookContainer {
+    height: 50vh
+  }
+}
