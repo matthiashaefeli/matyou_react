@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './index.scss';
 import Blog from './Blog';
 import Challenge from './Challenge';
-import About from './About';
+import Book from './Book';
 import Note from './Note';
 
 export default class Index extends Component {
@@ -15,7 +15,7 @@ export default class Index extends Component {
         </section>
         <section className='innerContainer'>
           <Challenge />
-          <About />
+          <Book />
         </section>
       </section>
     )

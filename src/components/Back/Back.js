@@ -2,7 +2,14 @@ import React, { Component } from 'react';
 import Cookie from 'js-cookie';
 import './back.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlusCircle, faSignOutAlt, faHome } from '@fortawesome/free-solid-svg-icons'
+import { faPlusCircle,
+         faSignOutAlt,
+         faHome,
+         faBookOpen,
+         faBook,
+         faStickyNote,
+         faGrimace,
+         faGlasses } from '@fortawesome/free-solid-svg-icons'
 
 export default class Back extends Component {
   state = {
@@ -32,6 +39,11 @@ export default class Back extends Component {
     return (
       <div className='links'>
         <a href='/'><FontAwesomeIcon icon={faHome} /></a>
+        <a href='/challenge'><FontAwesomeIcon icon={faGlasses} /></a>
+        <a href='/note'><FontAwesomeIcon icon={faStickyNote} /></a>
+        <a href='/book'><FontAwesomeIcon icon={faBookOpen} /></a>
+        <a href='/blog'><FontAwesomeIcon icon={faBook} /></a>
+        <a href='/about'><FontAwesomeIcon icon={faGrimace} /></a>
         {createlink}
       </div>
     )
