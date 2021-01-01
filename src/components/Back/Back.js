@@ -38,12 +38,24 @@ export default class Back extends Component {
 
     return (
       <div className='links'>
-        <a href='/'><FontAwesomeIcon icon={faHome} /></a>
-        <a href='/challenge'><FontAwesomeIcon icon={faGlasses} /></a>
-        <a href='/note'><FontAwesomeIcon icon={faStickyNote} /></a>
-        <a href='/book'><FontAwesomeIcon icon={faBookOpen} /></a>
-        <a href='/blog'><FontAwesomeIcon icon={faBook} /></a>
-        <a href='/about'><FontAwesomeIcon icon={faGrimace} /></a>
+        <a href='/'><FontAwesomeIcon icon={faHome} />
+          <span className='fontLink'> Home</span>
+        </a>
+        <a href='/challenge'><FontAwesomeIcon icon={faGlasses} />
+          <span className='fontLink'> Challenge</span>
+        </a>
+        <a href='/note'><FontAwesomeIcon icon={faStickyNote} />
+          <span className='fontLink'> Notes</span>
+        </a>
+        <a href='/book'><FontAwesomeIcon icon={faBookOpen} />
+          <span className='fontLink'> Books</span>
+        </a>
+        <a href='/blog'><FontAwesomeIcon icon={faBook} />
+          <span className='fontLink'> Blog</span>
+        </a>
+        <a href='/about'><FontAwesomeIcon icon={faGrimace} />
+          <span className='fontLink'> About</span>
+        </a>
         {createlink}
       </div>
     )
