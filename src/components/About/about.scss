@@ -29,11 +29,23 @@
 .loginLink {
   position:fixed;
   padding: 20px;
-  top:0;
-  right:0;
+  bottom:0;
+  left:0;
   a {
-    color: black;
+    color: grey;
     text-decoration: none;
     padding: 10px;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .aboutLinks {
+    a {
+      color: grey;
+    }
+  }
+
+  .aboutText {
+    color: white;
   }
 }
