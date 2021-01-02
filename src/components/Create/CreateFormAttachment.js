@@ -16,6 +16,7 @@ class CreateFormAttachment extends Component {
       token: Cookie.get('token'),
     }
 
+    this.handleAuthorChange = this.handleAuthorChange.bind(this);
     this.handleTitleChange = this.handleTitleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChangeFile = this.handleChangeFile.bind(this);
@@ -24,6 +25,12 @@ class CreateFormAttachment extends Component {
   handleChangeFile = (e) => {
     this.setState({
       selectedFile: e.target.files[0]
+    })
+  }
+
+  handleAuthorChange = (e) => {
+    this.setState({
+      author: e.target.value
     })
   }
 
