@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { Component } from 'react';
 import './book.scss';
 import Title from '../Title/Title';
-import Detail from '../Detail/Detail';
+import BookDetail from '../Detail/BookDetail';
 import Back from '../Back/Back';
 import Loading from '../Loading/Loading';
 import NetworkError from '../../Network/Index';
@@ -45,7 +45,7 @@ class Index extends Component {
     } else {
       div = <div className='bookContainer'>
               {books.map(book => (
-                <Detail key={book.id} detail={book} type='book' />
+                <BookDetail key={book.id} detail={book} type='book' />
               ))}
             </div>
     }
