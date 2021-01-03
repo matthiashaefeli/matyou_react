@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import Cookie from 'js-cookie';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom';
 import './detail.scss';
 
 
@@ -27,7 +28,7 @@ class BookDetail extends Component {
   }
 
   render() {
-    const { title, author, url, id } = this.props.detail;
+    const { url, id } = this.props.detail;
     const { type } = this.props
 
     let sectionStyle = {
@@ -48,8 +49,12 @@ class BookDetail extends Component {
 
     return (
       <>
-        <div style={sectionStyle} onClick={() => window.open(url, "_blank")} >
-        </div>
+        <Link to={{
+          pathname: '/comment',
+          state: {
+            id: id
+          }
+        }} style={sectionStyle}></Link>
         {deleteLink}
       </>
     )

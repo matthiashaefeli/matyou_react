@@ -91,7 +91,7 @@ class CreateFormAttachment extends Component {
     const { title, type } = this.props
 
     let input
-    if (type == 'book') {
+    if (type === 'book') {
       input = <div>
                 <input
                   type='text'
