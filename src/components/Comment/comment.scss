@@ -6,12 +6,9 @@
 }
 
 .commentContainer {
-  display: flex;
   width: 70vw;
   height: 90vh;
   margin: auto;
-  flex-wrap: wrap;
-  justify-content: flex-start;
   overflow: auto;
 }
 
@@ -30,10 +27,6 @@
 }
 
 @media screen and (max-width: 700px) {
-  .commentImage {
-    // display: none;
-  }
-
   .commentContainer {
     width: 70%;
   }

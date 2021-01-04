@@ -6,7 +6,7 @@ import { faPlusCircle,
          faSignOutAlt,
          faHome,
          faBookOpen,
-         faBook,
+         faBlog,
          faStickyNote,
          faGrimace,
          faGlasses } from '@fortawesome/free-solid-svg-icons'
@@ -50,7 +50,7 @@ export default class Back extends Component {
         <a href='/book'><FontAwesomeIcon icon={faBookOpen} />
           <span className='fontLink'> Books</span>
         </a>
-        <a href='/blog'><FontAwesomeIcon icon={faBook} />
+        <a href='/blog'><FontAwesomeIcon icon={faBlog} />
           <span className='fontLink'> Blog</span>
         </a>
         <a href='/about'><FontAwesomeIcon icon={faGrimace} />

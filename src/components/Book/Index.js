@@ -15,7 +15,7 @@ class Index extends Component {
   }
 
   componentDidMount = () => {
-    axios.get('https://matyou-api.herokuapp.com/books')
+    axios.get('https://matyou-api.herokuapp.com/book')
       .then(
         result => {
           this.setState({
