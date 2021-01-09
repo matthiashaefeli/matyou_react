@@ -12,7 +12,8 @@ class Index extends Component {
     error: null,
     isLoaded: false,
     notes: [],
-    searchText: ''
+    searchText: '',
+    noteCount: 0
   }
 
   componentDidMount = () => {
@@ -21,7 +22,8 @@ class Index extends Component {
         result => {
           this.setState({
             isLoaded: true,
-            notes: result.data
+            notes: result.data,
+            noteCount: result.data.length
           })
         },
         error => {
@@ -36,13 +38,18 @@ class Index extends Component {
   titleText = "Learning something new is a good feeling, not remembering it afterwards is not a good feeling. You know that you've seen it before and you google it over and over again. I write it down for myself and save it here. These are all my little notes."
 
   handleSearch = (e) => {
+    let filteredNotes
+    filteredNotes = this.state.notes
+                                .filter(note => note.title.toLowerCase().includes(this.state.searchText.toLowerCase()))
+    console.log(e.target.value)
     this.setState({
-      searchText: e.target.value
+      searchText: e.target.value,
+      noteCount: filteredNotes.length
     })
   }
 
   render() {
-    const { error, isLoaded, notes } = this.state;
+    const { error, isLoaded, notes, noteCount } = this.state;
 
     let div
     if (error) {
@@ -70,7 +77,7 @@ class Index extends Component {
             onChange={this.handleSearch.bind(this)}
             placeholder='Search....'
           />
-          <p>{this.state.notes.length} Notes</p>
+          <p>{noteCount} Notes</p>
         </div>
         {div}
       </article>
