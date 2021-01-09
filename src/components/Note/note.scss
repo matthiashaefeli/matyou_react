@@ -28,13 +28,18 @@
 
 @media screen and (max-width: 950px) {
   .noteContainer {
-    height: 55vh
+    height: 45vh
+  }
+}
+
+@media screen and (max-width: 885px) {
+  .noteContainer {
+    height: 40vh
   }
 }
 
 @media screen and (max-width: 650px) {
   .noteContainer {
-    height: 40vh;
     width: 80vw;
   }
 }
