@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Cookie from 'js-cookie';
 import Dropdown from 'react-dropdown';
 
-class CreateForm extends Component {
+class CreateComment extends Component {
   constructor(props) {
     super(props)
 
@@ -125,8 +125,8 @@ class CreateForm extends Component {
   }
 }
 
-CreateForm.propTypes = {
+CreateComment.propTypes = {
   title: PropTypes.string.isRequired
 }
 
-export default CreateForm;
+export default CreateComment;
