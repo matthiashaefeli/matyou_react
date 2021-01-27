@@ -48,7 +48,7 @@ class CreateForm extends Component {
       'Content-Type': 'application/json'
     }
 
-    axios.post('https://matyou-api.herokuapp.com/comment', modelData, {
+    axios.post('http://localhost:3000/comment', modelData, {
       headers: headers
     })
       .then(() => {
@@ -105,7 +105,7 @@ class CreateForm extends Component {
             />
           </div>
           <div>
-            <input
+            <textarea
               type='text'
               name='text'
               placeholder='text'
