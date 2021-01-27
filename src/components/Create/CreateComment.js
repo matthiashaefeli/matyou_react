@@ -48,7 +48,7 @@ class CreateForm extends Component {
       'Content-Type': 'application/json'
     }
 
-    axios.post('http://localhost:3000/comment', modelData, {
+    axios.post('https://matyou-api.herokuapp.com/comment', modelData, {
       headers: headers
     })
       .then(() => {
