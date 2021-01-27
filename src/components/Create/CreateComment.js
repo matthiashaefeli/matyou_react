@@ -125,7 +125,7 @@ class CreateComment extends Component {
   }
 }
 
-CreateForm.propTypes = {
+CreateComment.propTypes = {
   title: PropTypes.string.isRequired
 }
 
