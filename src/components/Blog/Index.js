@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './blog.scss';
 import Title from '../Title/Title';
 import Back from '../Back/Back';
-import Blog from './Blog'
+import Blog from '../Blog/Blog';
 
 class Index extends Component {
   render() {
