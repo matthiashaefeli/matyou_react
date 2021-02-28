@@ -1,61 +1,21 @@
-import axios from 'axios';
 import React, { Component } from 'react';
 import './blog.scss';
 import Title from '../Title/Title';
-import Detail from '../Detail/Detail';
 import Back from '../Back/Back';
-import Loading from '../Loading/Loading';
-import NetworkError from '../../Network/Index';
+import Blog from './blog'
 
 class Index extends Component {
-  state = {
-    error: null,
-    isLoaded: false,
-    blogs: [],
-  }
 
-  componentDidMount = () => {
-    axios.get('https://matyou-api.herokuapp.com/blog')
-      .then(
-        result => {
-          this.setState({
-            isLoaded: true,
-            blogs: result.data
-          })
-        },
-        error => {
-          this.setState({
-            isLoaded: true,
-            error
-          })
-        }
-      )
-  }
 
-  titleText = "I've read a lot of blogs but I don't have a favorite. Sometimes I bookmark a good blog, but if I need it again I certainly won't find it. Writing a blog and doing more research on something helps me to better understand and learn. This section is a mix of Blogs, Tutorials, and Information."
-
+  
   render() {
-    const { error, isLoaded, blogs } = this.state;
-    let div
-
-    if (error) {
-      div = <NetworkError />
-    } else if (!isLoaded) {
-      div = <Loading />
-    } else {
-      div = <div className='blogContainer'>
-              {blogs.map(blog => (
-                <Detail key={blog.id} detail={blog} type='blog' />
-              ))}
-            </div>
-    }
+    const titleText = "I've read a lot of blogs but I don't have a favorite. Sometimes I bookmark a good blog, but if I need it again I certainly won't find it. Writing a blog and doing more research on something helps me to better understand and learn. This section is a mix of Blogs, Tutorials, and Information."
 
     return (
       <article className='blogHome'>
         <Back />
-        <Title title={this.titleText} color={'white'} />
-        <p className='blogLength'>{this.state.blogs.length} Blogs</p>
-        {div}
+        <Title title={titleText} color={'white'} />
+        <Blog />
       </article>
     )
   }
