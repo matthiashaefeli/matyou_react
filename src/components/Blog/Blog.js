@@ -30,7 +30,6 @@ class Blog extends Component {
       )
   }
 
-
   render() {
     const { error, isLoaded, blogs } = this.state;
 
