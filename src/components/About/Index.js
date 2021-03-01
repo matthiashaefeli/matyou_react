@@ -18,7 +18,8 @@ class Index extends Component {
     let signout
     if (!this.state.authorized) {
       signout = <div className='loginLink'>
-        <a href='/login'><FontAwesomeIcon icon={faSignInAlt} /></a>
+        <a href='/login'>.</a>
+        <a href='https://matyou-api.herokuapp.com/sign_in'>.</a>
       </div>
     } else {
       signout = null
