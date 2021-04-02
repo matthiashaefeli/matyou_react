@@ -35,7 +35,7 @@ class Index extends Component {
           </a>
         </div>
         <div className='loginLink'>
-          <a href='https://matyou-api.herokuapp.com/sign_in'>.</a>
+          <a href='https://warm-anchorage-02243.herokuapp.com/' target='_blank'>.</a>
         </div>
       </article>
     )
