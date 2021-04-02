@@ -12,12 +12,16 @@
   overflow: auto;
 }
 
+.commentComment {
+  background-color: rgba(128,128,128, 0.8);
+}
+
 .commentImage {
   margin-top: 20px;
 }
 
 .commentText {
-  // background-color: rgba(128,128,128, 0.6);
+  margin-top: 10px;
 }
 
 @media screen and (max-width: 950px) {

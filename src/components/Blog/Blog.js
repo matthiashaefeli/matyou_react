@@ -13,7 +13,7 @@ class Blog extends Component {
   }
 
   componentDidMount = () => {
-    axios.get('https://matyou-api.herokuapp.com/blog')
+    axios.get('https://warm-anchorage-02243.herokuapp.com/data/blogs')
       .then(
         result => {
           this.setState({

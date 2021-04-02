@@ -7,20 +7,10 @@ import About from '../About/Index';
 import Comment from '../Comment/Index';
 import Book from '../Book/Index';
 import Error from '../Error/Error';
-import Login from '../Login/Login';
-import Create from '../Create/Index';
 import { Route, Switch } from 'react-router-dom';
-import Cookie from 'js-cookie';
 
 class App extends Component {
   render() {
-    let route
-    if (Cookie.get('token')) {
-      route = <Route exact path='/create' component={Create} />
-    } else {
-      route = null
-    }
-
     return (
       <Switch>
         <Route exact path='/' component={Home} />
@@ -28,10 +18,8 @@ class App extends Component {
         <Route exact path='/note' component={Note} />
         <Route exact path='/challenge' component={Challenge} />
         <Route exact path='/about' component={About} />
-        <Route exact path='/login' component={Login} />
         <Route exact path='/book' component={Book} />
         <Route exact path='/comment' component={Comment} />
-        {route}
         <Route component={Error} />
       </Switch>
     )

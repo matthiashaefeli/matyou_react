@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import Cookie from 'js-cookie';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
-import { faSignInAlt } from '@fortawesome/free-solid-svg-icons'
 import Title from '../Title/Title';
 import Back from '../Back/Back';
 import './about.scss'
@@ -15,19 +14,8 @@ class Index extends Component {
   titleText = "Hi! I'm Mat"
 
   render() {
-    let signout
-    if (!this.state.authorized) {
-      signout = <div className='loginLink'>
-        <a href='/login'>.</a>
-        <a href='https://matyou-api.herokuapp.com/sign_in'>.</a>
-      </div>
-    } else {
-      signout = null
-    }
-
     return (
       <article className='aboutHome'>
-        {signout}
         <Back />
         <Title title={this.titleText} color={'black'} />
         <div className='aboutText'>
@@ -45,6 +33,9 @@ class Index extends Component {
           <a href='https://www.linkedin.com/in/matthias-haefeli/' target='_blank' rel="noopener noreferrer" >
             <FontAwesomeIcon icon={faLinkedin} />
           </a>
+        </div>
+        <div className='loginLink'>
+          <a href='https://matyou-api.herokuapp.com/sign_in'>.</a>
         </div>
       </article>
     )

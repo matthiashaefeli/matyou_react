@@ -13,7 +13,7 @@ class Book extends Component {
   }
 
   componentDidMount = () => {
-    axios.get('https://matyou-api.herokuapp.com/book')
+    axios.get('https://warm-anchorage-02243.herokuapp.com/data/books')
       .then(
         result => {
           this.setState({

@@ -18,7 +18,7 @@ class Index extends Component {
   }
 
   componentDidMount = () => {
-    axios.get(`https://matyou-api.herokuapp.com/book/${this.props.location.state.id}`)
+    axios.get(`https://warm-anchorage-02243.herokuapp.com/data/book/${this.props.location.state.id}`)
       .then(
         result => {
           this.setState({
@@ -37,7 +37,7 @@ class Index extends Component {
 
   render() {
     const { error, isLoaded } = this.state
-    const { title, author, url, comments } = this.state.book
+    const { title, url, comments } = this.state.book
 
     let sectionStyle = {
       backgroundImage: `url(${url})`,
@@ -56,16 +56,15 @@ class Index extends Component {
     } else {
       div = <div className='commentContainer'>
               <div className='commentImage'><img src={url} alt={title} style={sectionStyle} /></div>
-              <div className='commentText'>
+              <div>
                 <p><b>Title: {title}</b></p>
-                <p><b>Author: {author}</b></p>
                 <p><b>Notes: </b></p>
-                <ul>
-                  <b>
+                <ul className='commentComment'>
+                  <p >
                   {comments.map(comment => (
                     <Comment key={comment.id} comment={comment} type='comment' />
                   ))}
-                  </b>
+                  </p>
                 </ul>
               </div>
             </div>

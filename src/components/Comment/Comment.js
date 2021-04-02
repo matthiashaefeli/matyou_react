@@ -3,19 +3,17 @@ import PropTypes from 'prop-types'
 
 class Comment extends Component {
   render() {
-    const { text } = this.props.comment;
+    const { comment } = this.props.comment;
 
     return (
-      <p>
-        {text}
-      </p>
+      <li className='commentText' dangerouslySetInnerHTML={{ __html: comment }} />
     );
   }
 }
 
 Comment.propTypes = {
   comment: PropTypes.shape({
-    text: PropTypes.string.isRequired,
+    comment: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired
   }),
   type: PropTypes.string.isRequired
