@@ -15,7 +15,7 @@ class componentName extends Component {
   }
 
   componentDidMount = () => {
-    axios.get('https://matyou-api.herokuapp.com/note')
+    axios.get('https://warm-anchorage-02243.herokuapp.com/data/notes')
       .then(
         result => {
           this.setState({

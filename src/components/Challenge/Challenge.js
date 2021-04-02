@@ -13,7 +13,7 @@ class Challenge extends Component {
   }
 
   componentDidMount = () => {
-    axios.get('https://matyou-api.herokuapp.com/challenge')
+    axios.get('https://warm-anchorage-02243.herokuapp.com/data/challenges')
       .then(
         result => {
           this.setState({
